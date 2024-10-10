@@ -7,6 +7,15 @@
 
 import UIKit
 
+var listOfWords = ["canserbero", "lilsupa", "apache", "maup", "vintageculture"]
+
+let incorrectMovesAllowed = 7
+
+var totalWins = 0
+var totalLosses = 0
+
+
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var treeImageView: UIImageView!
@@ -24,10 +33,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //Apple Pie Project
+        newRound()
+        
+    }
+    
+    var currentGame : Game!
+    //Page 421
+    
+    func newRound(){
+        
+        let newWord = listOfWords.removeFirst()
+        currentGame = Game
+        updateUI()
     }
 
-
+    
+    
+    func updateUI() {
+        scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
+        treeImageView.image = UIImage(named:"Tree \(currentGame.incorrectMovesRemaining)")
+    }
 }
 
