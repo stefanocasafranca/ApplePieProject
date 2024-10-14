@@ -38,12 +38,12 @@ class ViewController: UIViewController {
     }
     
     var currentGame : Game!
-    //Page 421
+    //Page 420
     
     func newRound(){
         
         let newWord = listOfWords.removeFirst()
-        currentGame = Game
+        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed)
         updateUI()
     }
 
