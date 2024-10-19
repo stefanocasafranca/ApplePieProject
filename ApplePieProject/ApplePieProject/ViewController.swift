@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
     
-   
     
     var currentGame : Game!
     
@@ -34,10 +33,12 @@ class ViewController: UIViewController {
     }
     
     
+    
+
     func newRound(){
         
         let newWord = listOfWords.removeFirst()
-        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed)
+        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed,guessedLetters: [])
         updateUI()
     }
 
@@ -51,6 +52,20 @@ class ViewController: UIViewController {
     
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
+        
+        
+        /*guard let letterString = sender.title(for: .normal) else {
+                print("Button title is nil!")
+                return
+            }*/
+        
+       let letterString = sender.title(for: .normal)!
+        
+        
+        let letter = Character(letterString.lowercased()) // Converter from Letter STRING to Character
+        currentGame.playerGuessed(letter: letter) // Call the function puting inside the letter we pressed
+        updateUI() // Call the function that changes picture and score
     }
+    
 }
 
