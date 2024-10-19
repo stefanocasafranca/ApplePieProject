@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		490C67042CB731830043A1F1 /* ApplePieProject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ApplePieProject.xcodeproj; sourceTree = "<group>"; };
 		495373992CA37F33007C4DD9 /* ApplePieProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePieProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C951102CC43E1000C151E5 /* ApplePieProject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ApplePieProject.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -49,6 +50,13 @@
 			isa = PBXGroup;
 			children = (
 				495373992CA37F33007C4DD9 /* ApplePieProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49C951112CC43E1000C151E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +114,10 @@
 			productRefGroup = 4953739A2CA37F33007C4DD9 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 49C951112CC43E1000C151E5 /* Products */;
+					ProjectRef = 49C951102CC43E1000C151E5 /* ApplePieProject.xcodeproj */;
+				},
 				{
 					ProductGroup = 490C67052CB731830043A1F1 /* Products */;
 					ProjectRef = 490C67042CB731830043A1F1 /* ApplePieProject.xcodeproj */;
