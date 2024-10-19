@@ -7,7 +7,7 @@
 
 import UIKit
 
-var listOfWords = ["canserbero", "lilsupa", "apache", "maup", "vintageculture"]
+var listOfWords = ["canserbero", "lilsupa", "apache", "anna", "charlotte"]
 
 let incorrectMovesAllowed = 7
 
@@ -19,26 +19,20 @@ var totalLosses = 0
 class ViewController: UIViewController {
     
     @IBOutlet weak var treeImageView: UIImageView!
-    
     @IBOutlet weak var correctWordLabel: UILabel!
-    
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet var letterButtons: [UIButton]!
     
-    @IBAction func letterButtonPressed(_ sender: UIButton) {
-        
-        sender.isEnabled = false
-    }
+   
+    
+    var currentGame : Game!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         newRound()
-        
     }
     
-    var currentGame : Game!
-    //Page 420
     
     func newRound(){
         
@@ -52,6 +46,11 @@ class ViewController: UIViewController {
     func updateUI() {
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named:"Tree \(currentGame.incorrectMovesRemaining)")
+    }
+    
+    
+    @IBAction func letterButtonPressed(_ sender: UIButton) {
+        sender.isEnabled = false
     }
 }
 
