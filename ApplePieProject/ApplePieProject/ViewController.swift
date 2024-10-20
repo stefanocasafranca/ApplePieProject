@@ -34,37 +34,39 @@ class ViewController: UIViewController {
     
     
     
-
+    
     func newRound(){
         
         let newWord = listOfWords.removeFirst()
         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed,guessedLetters: [])
         updateUI()
     }
-
+    
     
     
     func updateUI() {
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named:"Tree \(currentGame.incorrectMovesRemaining)")
+
     }
     
     
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
         
-        
-        /*guard let letterString = sender.title(for: .normal) else {
-                print("Button title is nil!")
-                return
-            }*/
-        
-       let letterString = sender.title(for: .normal)!
+           //crashes cause the button returns nil //BUTTONS WHERE ON PLAIN PLAIN INSTEAD OF DEFAULT - PLAIN
+        let letterString = sender.title(for: .normal)!
         
         
-        let letter = Character(letterString.lowercased()) // Converter from Letter STRING to Character
-        currentGame.playerGuessed(letter: letter) // Call the function puting inside the letter we pressed
-        updateUI() // Call the function that changes picture and score
+        // Converter from Letter STRING to Character
+
+        let letter = Character(letterString.lowercased())
+        
+        // Call the function puting inside the letter we pressed
+        currentGame.playerGuessed(letter: letter)
+        
+        //Call the function that changes picture and score
+        updateUI()
     }
     
 }
