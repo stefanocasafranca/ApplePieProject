@@ -22,6 +22,8 @@ struct Game {
         }
     }
     
+    
+    
     var formattedWord: String {
         var guessedWord = ""
         for letter in word {
