@@ -10,7 +10,11 @@ import Foundation
 struct Game {
     var word: String
     var incorrectMovesRemaining: Int
-    var guessedLetters: [Character]//Storing the CORRECT guessed letters in an array
+    //Storing the CORRECT guessed letters in an array
+    var guessedLetters: [Character]
+    
+    //Function that decrease the apples in tree if letter wrong
+
     mutating func playerGuessed(letter:Character){
         guessedLetters.append(letter)
         if !word.contains(letter){
@@ -18,5 +22,16 @@ struct Game {
         }
     }
     
-        //Function that decrease the apples in tree if letter wrong
+    var formattedWord: String {
+        var guessedWord = ""
+        for letter in word {
+            if guessedLetters.contains(letter) {
+                guessedWord += "\(letter)"
+            } else {            
+                guessedWord += "_"
+            }
+        }
+        return guessedWord
+        
+    }
 }

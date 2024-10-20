@@ -45,9 +45,24 @@ class ViewController: UIViewController {
     
     
     func updateUI() {
+        /*BEFORE SEPARATING THE "_"
+        //Using the Computed property in Game
+        correctWordLabel.text = currentGame.formattedWord
+        
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
-        treeImageView.image = UIImage(named:"Tree \(currentGame.incorrectMovesRemaining)")
+        
+        //Changing theimage synced with the number of tries
+        treeImageView.image = UIImage(named:"Tree \(currentGame.incorrectMovesRemaining)")*/
 
+        var letters = [String]()
+        for letter in currentGame.formattedWord {
+            letters.append(String(letter))
+        }
+        let wordWithSpacing = letters.joined(separator: " ")
+        correctWordLabel.text = wordWithSpacing
+        scoreLabel.text = "Wins: \(totalWins),         Losses: \(totalLosses)"
+        treeImageView.image = UIImage(named:        "Tree \(currentGame.incorrectMovesRemaining)")
+        
     }
     
     
